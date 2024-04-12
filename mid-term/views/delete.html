@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <title>delete page</title>
+    <style>
+        body {background-color: rgb(224, 238, 240);}
+        h3   {
+        text-align: center;
+        color: rgb(0, 0, 0);}
+        h1{
+        text-align: center;
+        color:rgb(0, 0, 0);
+        padding-top: 15px;
+        padding-bottom: 0px;
+        border: 2px solid transparent;
+        border-radius: 15px 15px 15px;
+        width: 450px;
+        height: 40px;
+        background-color: rgb(247, 250, 254);
+        margin-left: 33%;
+        margin-top:30px;
+        }
+        .bar{
+        width: 100%;
+        padding:5px 0px 15px;
+        }
+
+        .bar a {
+        float: left;
+        font-family: Arial, Helvetica, sans-serif;
+        color:#2E86C1;
+        font-weight: bold;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        background-color:aliceblue;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+
+        }
+        .bar a:hover {
+        background-color: #ddd;
+        color: black;
+        }
+        .bar a.active {
+        background-color:silver;
+        color: white;
+        }
+        .deleteform{
+        background-color: rgb(210, 230, 238);
+        border: 2px solid transparent;
+        border-radius: 15px 15px 15px;
+        width: 380px;
+        font-size:17px;
+        padding:20px 100px 100px 100px;    
+        margin: 30px 400px 50px 400px;   
+        }  
+        body{
+        background-image:url("https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+        height: 100%;
+        background-size: 100% ;
+        } 
+
+    </style>
+ <body>
+ <div class="bar">
+    <a href="/">Home page</a> 
+    <a href="/about">About page</a> 
+    <a href="/add">Add device page</a> 
+    <a class="active" href="/delete">Delete device page</a> 
+    <a href="/select">Device status page</a> 
+    <a href="/controlselect">control device page</a> 
+</div>
+</head>
+<br>
+<h1> Delete existing device </h1>
+<div class="deleteform">
+<form method="post" action="/deleted">
+    <h3>Please select a device to delete:</h3>
+<%devicenames.forEach(function(device){ %>
+    <input type="radio" id="html" name="deletename" required value='<%= device.Name %>''>
+    <label for="deletename"><%= device.Name %></label> 
+    <br>
+ <% }) %>
+</select>
+<br>
+<button type="submit" onclick="alert('Are you sure you want to delete this device?')">Delete</button>
+</form>
+</div>
+</body>
+</html>
+

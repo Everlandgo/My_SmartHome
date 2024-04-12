@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        body { 
+        background-image:url("https://images.unsplash.com/photo-1512429234305-12fe5b0b0f07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80");
+        background-repeat: no-repeat;
+        height: 100%;
+        background-size: 100% ;
+        
+    }
+        th,tr,td {
+        border: 1px solid rgb(87, 86, 86);
+        padding: 15px;
+        font-size: 18px;
+
+        } 
+
+        h1{
+        text-align: center;
+        color:rgb(0, 0, 0);
+        padding-top: 15px;
+        padding-bottom: 0px;
+        border: 2px solid transparent;
+        border-radius: 15px 15px 15px;
+        width: 450px;
+        height: 40px;
+        background-color: rgb(247, 250, 254);
+        margin-left: 35%;
+        margin-top:30px;
+
+        }
+
+        p{
+        text-align: center;
+        color: rgb(0, 0, 0);
+        }
+        .bar{
+        width: 100%;
+        padding: 14px 0px 15px;
+        }
+        .bar a {
+        float: left;
+        font-family: Arial, Helvetica, sans-serif;
+        color:#2E86C1;
+        font-weight: bold;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        background-color:aliceblue;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+
+        }
+        .bar a:hover {
+        background-color: #ddd;
+        color: black;
+        }
+        .bar a.active {
+        background-color:silver;
+        color: white;
+    }
+        table {
+        margin-left: auto;
+        margin-right: auto;    
+        width:70%;
+        border-collapse: collapse;
+        text-align: center;
+        margin-top:0px;
+        background-color: rgb(210, 230, 238);
+        margin-top: 30px;   
+
+
+    }
+
+    </style>
+ <div class="bar">
+    <a href="/">Home page</a> 
+    <a href="/about">About page</a> 
+    <a href="/add">Add device page</a> 
+    <a href="/delete">Delete device page</a> 
+    <a class="active" href="/select">Device status page</a> 
+    <a href="/controlselect">control device page</a> 
+</div>
+</head>
+<title>Select page</title>
+ <body>
+<br>
+<h1> Select device to view status </h1>
+<table>
+    <tr>
+        <th>Device Name:</th>
+        <th>To view status</th>
+    </tr>
+    <%devicenames.forEach(function(device){ %>
+    <tr>
+        <td><%= device.Name %></label></td>
+        <td> <input type="button" onclick="location.href='/viewstatus?name=<%= device.Name %>'" value="View status" /></td>
+    </tr>
+   
+ <% }) %>
+</table>
+</body>
+</html>
+<script> 
+</script>
